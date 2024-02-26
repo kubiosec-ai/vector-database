@@ -7,7 +7,6 @@ import os
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-documents = SimpleDirectoryReader("data").load_data()
 
 openai.api_key=os.getenv("OPENAI_API_KEY")
 
@@ -16,6 +15,7 @@ PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
     # load the documents and create the index
     documents = SimpleDirectoryReader("data").load_data()
+    # create the index and embeddings
     index = VectorStoreIndex.from_documents(documents)
     # store it for later
     index.storage_context.persist(persist_dir=PERSIST_DIR)
