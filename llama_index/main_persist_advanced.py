@@ -11,8 +11,6 @@ import time
 documents = SimpleDirectoryReader("data").load_data()
 
 openai.api_key=os.getenv("OPENAI_API_KEY")
-#openai.api_key = "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"
-
 
 PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
