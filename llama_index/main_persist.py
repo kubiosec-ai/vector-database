@@ -25,6 +25,6 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
-query_engine = index.as_query_engine()
+query_engine = index.as_query_engine(similarity_top_k=2)
 response = query_engine.query("what about nassim")
 print(response)
