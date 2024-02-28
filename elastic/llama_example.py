@@ -25,7 +25,7 @@ from llama_index.vector_stores.elasticsearch import ElasticsearchStore
 # !wget 'https://raw.githubusercontent.com/run-llama/llama_index/main/docs/examples/data/paul_graham/paul_graham_essay.txt' -O 'data/paul_graham/paul_graham_essay.txt'
 
 # load documents
-documents = SimpleDirectoryReader("./data/paul_graham/").load_data()
+documents = SimpleDirectoryReader("./Desktop/data/").load_data()
 
 from llama_index.core import StorageContext
 
@@ -40,7 +40,7 @@ index = VectorStoreIndex.from_documents(
 )
 
 query_engine = index.as_query_engine()
-response = query_engine.query("what were his investments in Y Combinator?")
+response = query_engine.query("what about Docker?")
 print(response)
 
 
