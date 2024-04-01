@@ -9,8 +9,10 @@ nest_asyncio.apply()
 
 from llama_parse import LlamaParse
 
+# https://cloud.llamaindex.ai/api-key
+
 parser = LlamaParse(
-    api_key="llx-xxxx",
+    api_key="llx-xxxx",  
     result_type="markdown",  # "markdown" and "text" are available
     num_workers=4, 
     verbose=False,
