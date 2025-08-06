@@ -4,9 +4,9 @@ from llama_index.core import StorageContext, load_index_from_storage
 from IPython.display import Markdown, display
 import os
 import openai
-import requests
 import json
 import time
+from security import safe_requests
 
 
 openai.api_key=os.getenv("OPENAI_API_KEY")
@@ -83,7 +83,7 @@ print("-------------------------------------------------------------------------
 
 
 url = "https://raw.githubusercontent.com/elastic/elasticsearch-labs/main/notebooks/search/movies.json"
-response = requests.get(url, verify=False)
+response = safe_requests.get(url, verify=False)
 print("Load data Finished from URL")
 print(response.content)
 
